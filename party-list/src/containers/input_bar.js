@@ -3,7 +3,9 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchPartyList} from './../actions/index';
 
-
+const buttonStyle = {
+  margin: '10px'
+}
 
 class InputBar extends Component {
   constructor(props) {
@@ -32,11 +34,13 @@ class InputBar extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit}>
+      <form className="form-inline" onSubmit={this.onFormSubmit}>
         <input
+          style={buttonStyle}
+          className="form-control"
           onChange={this.onInputChange}
           value={this.state.term}/>
-        <button type='submit'>Add person to guest list</button>
+        <button className="btn btn-primary" type='submit'>Add person to guest list</button>
       </form>
     )
   }

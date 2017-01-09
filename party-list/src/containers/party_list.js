@@ -4,11 +4,11 @@ import {bindActionCreators} from 'redux';
 import {removePartyGoer} from './../actions/index';
 
 class PartyList extends Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
     // this.removeName = this.removeName.bind(this);
-  }
+  //}
 
   // removeName(name) {
   //   console.log('remove name called');
@@ -18,7 +18,6 @@ class PartyList extends Component {
   renderPartyList(name) {
     return (
       <li
-        onClick={alert('react sucks!')}
         key={name}>
         {name}
       </li>
