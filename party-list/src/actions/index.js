@@ -11,6 +11,7 @@ export function fetchPartyList(name) {
 }
 
 export function removePartyGoer(name) {
+  alert('hi');
   return {
     type: REMOVE_PARTY_GOER,
     payload: name
