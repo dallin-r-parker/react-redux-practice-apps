@@ -9,7 +9,8 @@ export default function(state = [], action) {
     return [action.payload, ...state];
       // return state;
   case REMOVE_PARTY_GOER:
-    return state.filter(payload => payload !== action.payload);
+    const newState = state.filter(payload => payload !== action.payload);
+    return newState;
   default:
     return state;
   }

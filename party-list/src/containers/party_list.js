@@ -2,35 +2,46 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {removePartyGoer} from './../actions/index';
+import ListItem from './../components/list_item';
 
 class PartyList extends Component {
   constructor(props) {
     super(props);
 
-    // this.removePerson = this.removePerson.bind(this);
+    this.removePartyGoer = this.removePartyGoer.bind(this);
   }
 
-  removePerson(name) {
-    this.props.removePartyGoer(name);
+  removePartyGoer(name) {
+    alert('no');
+      this.props.removePartyGoer(name);
   }
-
-
-  renderPartyList(name) {
-    return (
-      <li
-        key={name}>
-        {name}
-      </li>
-    )
-  }
+  //
+  // renderPartyList(name) {
+  //   return (
+  //     <li
+  //       onClick={this.props.removePartyGoer}
+  //       key={name}>
+  //       {name}
+  //     </li>
+  //   )
+  // }
 
 
   render() {
+    const self = this;
+    const people = this.props.partyList.map((person, index) => {
+      return (
+        <ListItem
+          key={index}
+          name={person}
+          fn={this.removePartyGoer} />
+      )
+    })
     return (
       <div>
-        I am the master party list: <br></br>
+        The master party list: <br></br>
         <ul>
-          {this.props.partyList.map(this.renderPartyList)}
+          {people}
         </ul>
       </div>
     );
@@ -42,7 +53,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({removePartyGoer}, dispatch);
+  return bindActionCreators({removePartyGoer: removePartyGoer}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PartyList);
