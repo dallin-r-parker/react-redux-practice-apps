@@ -11,7 +11,9 @@ class TodoList extends Component {
         <ul>
         {this.props.tasks.map(task => {
           return(
-            <li key={task}
+            <li
+              className='pointer'
+              key={task}
               onClick={() => {
                 this.props.removeTask(task);
                 this.props.addCompleted(task);
@@ -20,7 +22,7 @@ class TodoList extends Component {
             </li>
           )
         })}
-      </ul>  
+      </ul>
     </div>
     );
   }

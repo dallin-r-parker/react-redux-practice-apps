@@ -60,6 +60,7 @@ class AddItem extends Component {
             {this.props.completed.map(task => {
               return (
                 <li
+                  className='pointer'
                   onClick={() => this.props.removeCompleted(task)}
                   key={task}>
                   {task}
