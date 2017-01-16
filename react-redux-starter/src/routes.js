@@ -6,7 +6,7 @@ import App from './components/app';
 
 export default (
   <Route path='' component={App}>
-    <IndexRoute component={} />
-    <Route path='' component={} />
+    {/*<IndexRoute component={} />
+  <Route path='' component={} />*/}
   </Route>
 )

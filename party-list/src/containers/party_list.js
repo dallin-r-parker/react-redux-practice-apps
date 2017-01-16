@@ -39,7 +39,7 @@ class PartyList extends Component {
     })
     return (
       <div>
-        The master party list: <br></br>
+        <div className='master-party'>The master party list:</div> <br></br>
         <ul>
           {people}
         </ul>
@@ -53,7 +53,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({removePartyGoer: removePartyGoer}, dispatch);
+  return bindActionCreators({removePartyGoer}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PartyList);
