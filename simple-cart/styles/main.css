@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Playball');
+
+.title {
+  width: 100%;
+  font-size: 40px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Playball', cursive;
+  margin: 50px 0px;
+}
+
+.suits {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.image  {
+  width: 200px;
+}
