@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Playball');
 
+
 .title {
   width: 100%;
   font-size: 40px;
@@ -19,4 +20,23 @@
 
 .image  {
   width: 200px;
+}
+
+.border {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  margin-bottom: 5px;
+  padding: 10px 10px;
+}
+
+.cartTitle {
+  width: 100%;
+  text-align: center;
+  font-family: 'Playball', cursive;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
