@@ -4,6 +4,13 @@ import { bindActionCreators } from 'redux';
 import { addToCart } from './../actions/index';
 
 class Suits extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectedSuit: {name: '', url: ''}
+    };
+  }
   render() {
     const suits = [
       {
@@ -36,7 +43,12 @@ class Suits extends Component {
                 {suit.name}
               </div>
               <img
-                className='image'
+                onClick={() => {
+                  $('.hidden').fadeIn();
+                  $('.hidden').css({"display": "flex"});
+                  this.setState({selectedSuit: suit}, () => console.log(this.state))
+                }}
+                className='image cursor-zoom'
                 src={suit.url} />
               <button
                 onClick={() => this.props.addToCart(suit)}
@@ -44,6 +56,14 @@ class Suits extends Component {
             </div>
           )
         })}
+        <div
+          onClick={() => {
+            $('.hidden').fadeOut();
+          }}
+          className='hidden'
+          >
+          <img src={this.state.selectedSuit.url} className='selectedSuit' />
+        </div>
       </div>
     )
   }

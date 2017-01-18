@@ -23,7 +23,7 @@ class Cart extends Component {
                     className='image'
                     src={suit.url} />
                   <button
-                    onClick={() => this.props.removeFromCart(suit.name)}
+                    onClick={() => this.props.removeFromCart(index)}
                     >Remove item</button>
                 </div>
               </div>

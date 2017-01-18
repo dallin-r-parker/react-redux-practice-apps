@@ -9,9 +9,9 @@ export default function(state = [], action) {
     case REMOVE_FROM_CART:
       alert(action.payload);
       console.log(state)
-      const newState = state.filter(item => {
-        if(item.name !== action.payload) {
-          return item;
+      const newState = state.filter((itemIndex, index) => {
+        if(index !== action.payload) {
+          return itemIndex;
         }
       });
       return newState;
