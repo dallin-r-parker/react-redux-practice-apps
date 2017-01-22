@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+* {
+  font-family: 'Rock Salt', cursive;
+}
+
 .bg-wrap {
   width: 100%;
   height: 100vh;
   background: url('./../../images/xmmvaanqa2i-christos-barbalis.jpg');
   background-size: cover;
+  overflow: hidden;
 }
 .input-wrap {
   width: 100%;
@@ -10,7 +16,7 @@
   justify-content: center;
 }
 .input-wrap input {
-  width: 300px;
+  width: 350px;
   border: none;
   border: 2px solid;
   font-size: 30px;
@@ -32,4 +38,18 @@
   border: 2px solid;
   border-radius: 5px;
   background: white;
+}
+.chats {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-top: 50px;
+}
+.single-chat {
+  font-family: 'Rock Salt', cursive;
+  background: white;
+  border-radius: 10px;
+  margin: 20px 0px;
+  box-shadow: 0px 0px 10px 15px white;
 }

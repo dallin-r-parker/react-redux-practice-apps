@@ -14,6 +14,8 @@ class App extends Component {
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.onButtonClick = this.onButtonClick.bind(this);
+
+    this.props.getChats();
   }
 
   onInputChange(event) {
@@ -22,7 +24,9 @@ class App extends Component {
     }, () => console.log(this.state));
   };
 
-  onButtonClick() {
+  onButtonClick(event) {
+    event.preventDefault();
+    console.log(event);
     axios.post('http://localhost:8000/api/new-message', {message: this.state.term}).then(
       response => {
         this.props.getChats();
@@ -38,11 +42,13 @@ class App extends Component {
     return (
       <div className='bg-wrap'>
         <div className='input-wrap'>
-          <input
-            placeholder='type to chat...'
-            value={this.state.term}
-            onChange={this.onInputChange}
-            type="text" className=""/>
+          <form onSubmit={this.onButtonClick}>
+            <input
+              placeholder='type to chat...'
+              value={this.state.term}
+              onChange={this.onInputChange}
+              type="text" className=""/>
+          </form>
         </div>
         <div className='chat-wrap'>
           <button
@@ -51,12 +57,15 @@ class App extends Component {
           <button
             onClick={() => this.props.getChats()}
             >Get za chats!!!</button>
-          <div>{this.props.chats.map((chat, index) => {
-              return (
-                <div key={index}>{chat}</div>
-              )
-            })}</div>
+
         </div>
+        <div className='chats'>{this.props.chats.map((chat, index) => {
+            return (
+              <div
+                className='single-chat'
+                key={index}>{chat}</div>
+            )
+          })}</div>
       </div>
     );
   }
